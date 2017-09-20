@@ -3,7 +3,8 @@ import moment from 'moment-timezone';
 import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
 import routes from './util/routes';
-import { checkFilter } from './util/bus';
+import Tooltip from './util/tooltip';
+import { checkFilter, setDay } from './util/bus';
 
 import './style.scss';
 
@@ -11,6 +12,7 @@ moment.tz.setDefault('UTC');
 
 Vue.use(VueResource);
 Vue.use(VueRouter);
+Vue.use(Tooltip);
 
 const router = new VueRouter({ routes });
 
@@ -46,6 +48,7 @@ new Vue({
 		});
 		// JS bind keyword putting 'this' in the checkFilter function
 		this.$bus.$on('check-filter', checkFilter.bind(this));
+		this.$bus.$on('set-day', setDay.bind(this));
 	},
 	router,
 });

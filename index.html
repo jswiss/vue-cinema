@@ -20,7 +20,10 @@
 			<img src="/public/logo.png">
 			<h1>Vue.js Cinema</h1>
 		</div>
-		<router-view v-bind:genre="genre" v-bind:time="time" v-bind:movies="movies" v-bind:day="day"></router-view>
+		<!-- Keep alive special component keeps data and state in memory -->
+		<keep-alive>
+			<router-view v-bind:genre="genre" v-bind:time="time" v-bind:movies="movies" v-bind:day="day"></router-view>
+		</keep-alive>
 	</div>
 	<script src="/dist/build.js"></script>
 </body>

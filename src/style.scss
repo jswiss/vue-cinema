@@ -380,6 +380,60 @@ html {
 				}
 			}
 
+			.movie-col-left {
+				img {
+					height: 250px;
+					display: block;
+
+					@media screen and (max-width: $break-small) {
+						height: 150px;
+					}
+				}
+			}
+
+			.movie-col-right {
+				padding-left: 1rem;
+
+				.movie-title {
+					margin-bottom: 1rem;
+					display: flex;
+					align-items: flex-start;
+					flex-wrap: wrap;
+
+					h2 {
+						color: $sunshade;
+						margin: 0;
+						text-shadow: $text-shadow;
+						display: inline-block;
+						margin-right: 0.5rem;
+					}
+
+					.movie-rating {
+						color: white;
+						text-shadow: $text-shadow;
+						background-color: $bright-red;
+						line-height: 1.5rem;
+						padding: 0.3rem 0.5rem 0.2rem;
+						font-weight: bold;
+						user-select: none;
+						white-space: nowrap;
+						overflow: hidden;
+					}
+
+					@media screen and (max-width: $break-small) {
+						h2 {
+							font-size: 1.25rem;
+							line-height: 1.25rem;
+						}
+						.movie-rating {
+							font-size: 0.8rem;
+							line-height: 1rem;
+							padding: 0.2rem 0.35rem 0.1rem;
+						}
+					}
+				}
+			}
+
 			.movie {
 				.movie-details {
 					color: $white;
